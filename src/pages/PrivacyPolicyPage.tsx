@@ -24,7 +24,7 @@ export const PrivacyPolicyPage: React.FC<PageProps> = ({ onBack }) => {
           Privacy Policy
         </h1>
         <p className="mt-3 text-base text-gray-400 leading-relaxed font-sans">
-          Last updated: 2026 September. json2.js.org commitment to zero telemetry and total developer privacy.
+          Last updated: 2026 September. json2js commitment to zero telemetry and total developer privacy.
         </p>
       </div>
 
@@ -35,7 +35,7 @@ export const PrivacyPolicyPage: React.FC<PageProps> = ({ onBack }) => {
             1. Zero Server-Side Transmission
           </h2>
           <p>
-            json2.js.org does not have any backend database, server API, or analytics pipeline that stores or reads the data you convert. All JSON parsing, syntax validation, JavaScript AST transformations, and text formatting execute strictly inside your local web browser&apos;s memory sandbox.
+            json2js does not have any backend database, server API, or analytics pipeline that stores or reads the data you convert. All JSON parsing, syntax validation, JavaScript AST transformations, and text formatting execute strictly inside your local web browser&apos;s memory sandbox.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export const PrivacyPolicyPage: React.FC<PageProps> = ({ onBack }) => {
             2. No Account or Personal Information Required
           </h2>
           <p>
-            You do not need to register, sign in, or provide any personal details (such as your name, email, or credentials) to use any feature of json2.js.org.
+            You do not need to register, sign in, or provide any personal details (such as your name, email, or credentials) to use any feature of json2js.
           </p>
         </div>
 
@@ -59,10 +59,10 @@ export const PrivacyPolicyPage: React.FC<PageProps> = ({ onBack }) => {
 
         <div>
           <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-3">
-            4. Community Hosting &amp; Infrastructure
+            4. Hosting &amp; Infrastructure
           </h2>
           <p>
-            This project is hosted via the community js.org DNS system. Standard network routing and DDoS protections provided by modern web hosting networks apply at the DNS layer without any inspection of your code or input payloads.
+            This project is served as a static website through a modern web hosting platform. Standard network routing and DDoS protections provided by the hosting network apply, without any inspection of your code or input payloads.
           </p>
         </div>
       </div>
