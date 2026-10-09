@@ -10,9 +10,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
         <div>
           <span>
-            &copy; 2026 json2.js.org. Built with ❤️ by{' '}
+            &copy; 2026 json2js. Built with ❤️ by{' '}
             <a
-              href="https://github.com/rizwanislam-FireFolk"
+              href="https://github.com/rizwanislam505"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-[#F7DF1E] transition-colors underline-offset-2 hover:underline font-medium"
