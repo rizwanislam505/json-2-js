@@ -591,7 +591,7 @@ export const userProfile: UserProfile = {
           <div className="space-y-4 text-sm text-zinc-300">
             <div className="space-y-1">
               <h3 className="font-medium text-zinc-100 text-sm sm:text-base">
-                Is my data secure when converting on json2.js.org?
+                Is my data secure when converting on json2js.vercel.app?
               </h3>
               <p className="text-zinc-400 leading-relaxed text-xs sm:text-sm">
                 Yes, completely. All parsing, transformation, and formatting occur 100% locally inside your web browser using JavaScript in-memory execution. No data is ever sent to any remote server or stored in any database.
