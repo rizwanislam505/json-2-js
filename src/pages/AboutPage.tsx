@@ -26,7 +26,7 @@ export const AboutPage: React.FC<PageProps> = ({ onBack }) => {
           <span className="text-[#F7DF1E]">js</span>
         </h1>
         <p className="mt-3 text-base text-gray-400 leading-relaxed font-sans">
-          A community-driven, 100% free developer utility hosted on the popular js.org network.
+          A community-driven, 100% free developer utility for the JavaScript community.
         </p>
       </div>
 
@@ -34,11 +34,10 @@ export const AboutPage: React.FC<PageProps> = ({ onBack }) => {
       <div className="space-y-8 text-sm sm:text-base leading-relaxed text-gray-300">
         <div>
           <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-3">
-            js.org Community Hosted Project
+            Free &amp; Open Source Project
           </h2>
           <p>
-            <strong>json2.js.org</strong> is hosted on the popular community-driven <strong>js.org</strong> subdomain network for the JavaScript community.
-            It was created to give developers a lightning-fast, zero-friction, and completely ad-free way to transform JSON payloads into native JavaScript object literals and vice versa.
+            <strong>json2js</strong> was created to give developers a lightning-fast, zero-friction, and completely ad-free way to transform JSON payloads into native JavaScript object literals and vice versa.
           </p>
           <p className="mt-3 text-gray-400">
             Non-Commercial &amp; Community First: No paid plans, no telemetry, no tracking scripts, and no ads. Built solely to serve JavaScript and TypeScript developers worldwide.
@@ -79,7 +78,7 @@ export const AboutPage: React.FC<PageProps> = ({ onBack }) => {
           <p>
             Maintained with ❤️ by{' '}
             <a
-              href="https://github.com/rizwanislam-FireFolk"
+              href="https://github.com/rizwanislam505"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#F7DF1E] hover:underline font-medium"
