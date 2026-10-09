@@ -232,26 +232,39 @@ export const ConverterWorkspace: React.FC<ConverterWorkspaceProps> = ({
     ? 'Paste your JSON or upload a file...'
     : `Paste your ${targetLabel} or upload a file...`;
 
+  // Accent classes: yellow for JavaScript, TypeScript blue for TypeScript
+  const accent = {
+    border: isTypeScript ? 'border-[#3178C6]' : 'border-[#F7DF1E]',
+    ring: isTypeScript ? 'ring-[#3178C6]/50' : 'ring-[#F7DF1E]/50',
+    bgSoft: isTypeScript ? 'bg-[#3178C6]/10' : 'bg-[#F7DF1E]/10',
+    text: isTypeScript ? 'text-[#3178C6]' : 'text-[#F7DF1E]',
+    solid: isTypeScript ? 'bg-[#3178C6] text-white' : 'bg-[#F7DF1E] text-zinc-950',
+    checkbox: isTypeScript ? 'accent-[#3178C6]' : 'accent-[#F7DF1E]',
+    hoverBtn: isTypeScript
+      ? 'hover:bg-[#3178C6]/20 hover:border-[#3178C6]'
+      : 'hover:bg-[#F7DF1E]/20 hover:border-[#F7DF1E]',
+  };
+
   return (
     <div id="converter-section" className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-4">
       {/* Main Side-by-Side Cards Container */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-stretch gap-4 lg:gap-3">
-        {/* LEFT CARD: JSON (or JS in reverse mode) */}
+        {/* LEFT CARD: JSON (or JS/TS in reverse mode) */}
         <div
           onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
           onDragLeave={() => setIsDragging(false)}
           onDrop={handleDrop}
           className={`relative bg-zinc-900 rounded-2xl border ${
-            isDragging ? 'border-[#F7DF1E] ring-2 ring-[#F7DF1E]/50' : 'border-zinc-800'
+            isDragging ? `${accent.border} ring-2 ${accent.ring}` : 'border-zinc-800'
           } shadow-xs flex flex-col overflow-hidden transition-all duration-150 h-[580px] min-h-[580px] w-full`}
         >
-          {/* Card Header: Plain 'JSON' title and pure icon-only buttons with no backgrounds or badges */}
+          {/* Card Header */}
           <div className="px-4 py-3 bg-zinc-900 border-b border-zinc-800 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="text-sm font-semibold text-white tracking-wide">{leftLabel}</span>
             </div>
 
-            {/* Icon-only Action Controls (No background, card, label, or badge) */}
+            {/* Icon-only Action Controls */}
             <div className="flex items-center gap-1">
               <input
                 ref={fileInputRef}
@@ -304,8 +317,8 @@ export const ConverterWorkspace: React.FC<ConverterWorkspaceProps> = ({
 
           {/* Drag & Drop Visual Overlay */}
           {isDragging && (
-            <div className="absolute inset-0 z-20 bg-[#F7DF1E]/10 backdrop-blur-xs border-2 border-dashed border-[#F7DF1E] rounded-2xl flex flex-col items-center justify-center pointer-events-none">
-              <Upload className="w-10 h-10 text-[#F7DF1E] animate-bounce mb-2" />
+            <div className={`absolute inset-0 z-20 ${accent.bgSoft} backdrop-blur-xs border-2 border-dashed ${accent.border} rounded-2xl flex flex-col items-center justify-center pointer-events-none`}>
+              <Upload className={`w-10 h-10 ${accent.text} animate-bounce mb-2`} />
               <p className="text-sm font-semibold text-white">Drop your file here</p>
             </div>
           )}
@@ -348,13 +361,13 @@ export const ConverterWorkspace: React.FC<ConverterWorkspaceProps> = ({
 
         {/* RIGHT CARD: JavaScript or TypeScript */}
         <div className="relative bg-zinc-900 rounded-2xl border border-zinc-800 shadow-xs flex flex-col overflow-hidden h-[580px] min-h-[580px] w-full">
-          {/* Card Header: Plain title, clean icon-only copy button, and single Download button */}
+          {/* Card Header */}
           <div className="px-4 py-3 bg-zinc-900 border-b border-zinc-800 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="text-sm font-semibold text-white tracking-wide">{rightLabel}</span>
             </div>
 
-            {/* Action Buttons: Clean Ghost Copy Icon + Clean Download Button with text and icon */}
+            {/* Action Buttons */}
             <div className="flex items-center gap-2">
               <button
                 type="button"
@@ -464,7 +477,7 @@ export const ConverterWorkspace: React.FC<ConverterWorkspaceProps> = ({
                       type="button"
                       onClick={() => setOptions(prev => ({ ...prev, quoteStyle: 'single' }))}
                       className={`px-2 py-1 text-xs rounded-md transition-colors cursor-pointer ${
-                        options.quoteStyle === 'single' ? 'bg-[#F7DF1E] text-zinc-950 font-bold shadow-2xs' : 'text-gray-400'
+                        options.quoteStyle === 'single' ? `${accent.solid} font-bold shadow-2xs` : 'text-gray-400'
                       }`}
                     >
                       'Single'
@@ -473,7 +486,7 @@ export const ConverterWorkspace: React.FC<ConverterWorkspaceProps> = ({
                       type="button"
                       onClick={() => setOptions(prev => ({ ...prev, quoteStyle: 'double' }))}
                       className={`px-2 py-1 text-xs rounded-md transition-colors cursor-pointer ${
-                        options.quoteStyle === 'double' ? 'bg-[#F7DF1E] text-zinc-950 font-bold shadow-2xs' : 'text-gray-400'
+                        options.quoteStyle === 'double' ? `${accent.solid} font-bold shadow-2xs` : 'text-gray-400'
                       }`}
                     >
                       "Double"
@@ -482,7 +495,7 @@ export const ConverterWorkspace: React.FC<ConverterWorkspaceProps> = ({
                       type="button"
                       onClick={() => setOptions(prev => ({ ...prev, quoteStyle: 'backtick' }))}
                       className={`px-2 py-1 text-xs rounded-md transition-colors cursor-pointer ${
-                        options.quoteStyle === 'backtick' ? 'bg-[#F7DF1E] text-zinc-950 font-bold shadow-2xs' : 'text-gray-400'
+                        options.quoteStyle === 'backtick' ? `${accent.solid} font-bold shadow-2xs` : 'text-gray-400'
                       }`}
                     >
                       `Backtick`
@@ -496,7 +509,7 @@ export const ConverterWorkspace: React.FC<ConverterWorkspaceProps> = ({
                     type="checkbox"
                     checked={options.unquoteKeys}
                     onChange={(e) => setOptions(prev => ({ ...prev, unquoteKeys: e.target.checked }))}
-                    className="w-3.5 h-3.5 accent-[#F7DF1E] rounded cursor-pointer"
+                    className={`w-3.5 h-3.5 ${accent.checkbox} rounded cursor-pointer`}
                   />
                   <span>Unquote Keys</span>
                 </label>
@@ -507,7 +520,7 @@ export const ConverterWorkspace: React.FC<ConverterWorkspaceProps> = ({
                     type="checkbox"
                     checked={options.trailingCommas}
                     onChange={(e) => setOptions(prev => ({ ...prev, trailingCommas: e.target.checked }))}
-                    className="w-3.5 h-3.5 accent-[#F7DF1E] rounded cursor-pointer"
+                    className={`w-3.5 h-3.5 ${accent.checkbox} rounded cursor-pointer`}
                   />
                   <span>Trailing Commas</span>
                 </label>
@@ -518,7 +531,7 @@ export const ConverterWorkspace: React.FC<ConverterWorkspaceProps> = ({
                     type="checkbox"
                     checked={options.semicolon}
                     onChange={(e) => setOptions(prev => ({ ...prev, semicolon: e.target.checked }))}
-                    className="w-3.5 h-3.5 accent-[#F7DF1E] rounded cursor-pointer"
+                    className={`w-3.5 h-3.5 ${accent.checkbox} rounded cursor-pointer`}
                   />
                   <span>Semicolons</span>
                 </label>
@@ -529,7 +542,7 @@ export const ConverterWorkspace: React.FC<ConverterWorkspaceProps> = ({
                     type="checkbox"
                     checked={options.sortKeys}
                     onChange={(e) => setOptions(prev => ({ ...prev, sortKeys: e.target.checked }))}
-                    className="w-3.5 h-3.5 accent-[#F7DF1E] rounded cursor-pointer"
+                    className={`w-3.5 h-3.5 ${accent.checkbox} rounded cursor-pointer`}
                   />
                   <span>Sort A-Z</span>
                 </label>
@@ -557,9 +570,9 @@ export const ConverterWorkspace: React.FC<ConverterWorkspaceProps> = ({
             <button
               type="button"
               onClick={handleRandomSample}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-[#F7DF1E]/20 text-gray-200 border border-zinc-700 hover:border-[#F7DF1E] text-xs font-semibold transition-all cursor-pointer shadow-2xs"
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 ${accent.hoverBtn} text-gray-200 border border-zinc-700 text-xs font-semibold transition-all cursor-pointer shadow-2xs`}
             >
-              <Shuffle className="w-3.5 h-3.5 text-[#F7DF1E]" />
+              <Shuffle className={`w-3.5 h-3.5 ${accent.text}`} />
               <span>Random Sample</span>
             </button>
           </div>
