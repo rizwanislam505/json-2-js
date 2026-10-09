@@ -1,18 +1,20 @@
 import React from 'react';
+import { TargetLanguage } from '../types';
 
 interface HeroSectionProps {
-  mode?: 'js' | 'ts';
+  targetLanguage: TargetLanguage;
+  onSelectLanguage?: (lang: TargetLanguage) => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ mode = 'js' }) => {
-  const isTS = mode === 'ts';
+export const HeroSection: React.FC<HeroSectionProps> = ({ targetLanguage }) => {
+  const isTS = targetLanguage === 'typescript';
 
   return (
     <section className="pt-10 pb-4 text-center px-4 max-w-4xl mx-auto" aria-labelledby="hero-heading">
       <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-normal text-gray-950 dark:text-white tracking-tight leading-tight">
         {isTS ? (
           <>
-            JSON to <span className="text-[#3178C6]">TypeScript</span> Converter for Free
+            JSON to <span className="text-[#3178C6]">TypeScript Types</span> Converter for Free
           </>
         ) : (
           'JSON to JavaScript Object Converter for Free'
