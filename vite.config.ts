@@ -16,7 +16,7 @@ export default defineConfig(() => {
           id: '/',
           name: 'JSON to JavaScript Object Converter',
           short_name: 'JSON to JS',
-          description: 'Free, fast, and offline-capable JSON to JavaScript Object Converter on json2.js.org.',
+          description: 'Free, fast, and offline-capable JSON to JavaScript Object Converter.',
           theme_color: '#F7DF1E',
           background_color: '#18181B',
           display: 'standalone',
