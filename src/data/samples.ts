@@ -9,9 +9,9 @@ export const SAMPLE_JSONS: SampleItem[] = [
     json: JSON.stringify(
       {
         id: "usr_99214",
-        username: "alex_dev",
-        fullName: "Alex Rivera",
-        email: "alex.rivera@example.com",
+        username: "Rizu_955",
+        fullName: "Rizwan Islam",
+        email: "rizwanislam505@gmail.com.com",
         isActive: true,
         role: "admin",
         stats: {
