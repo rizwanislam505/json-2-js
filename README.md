@@ -2,18 +2,21 @@
 
 # JSON to JavaScript & TypeScript Converter
 
-> **json2.js.org** — Convert JSON payloads into clean, idiomatic JavaScript object literals, TypeScript interfaces, types, and ES6 modules.
+> **json2js** — Convert JSON payloads into clean, idiomatic JavaScript object literals, TypeScript interfaces, types, and ES6 modules.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg?logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18.x-61dafb.svg?logo=react)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-6.x-646CFF.svg?logo=vite)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.x-38B2AC.svg?logo=tailwind-css)](https://tailwindcss.com/)
-[![PWA Ready](https://img.shields.io/badge/PWA-Offline%20Ready-green.svg)](https://json2.js.org/)
+[![PWA Ready](https://img.shields.io/badge/PWA-Offline%20Ready-green.svg)](https://json2js.vercel.app/)
 
 100% Free • Offline-First • Client-Side Only • Zero Latency
 
-[Live Demo](https://json2.js.org/) | [Report Bug](mailto:rizwanislam505@gmail.com?subject=[Bug%20Report]%20JSON%20to%20JS/TS%20Converter) | [Request Feature](mailto:rizwanislam505@gmail.com?subject=[Feature%20Request]%20JSON%20to%20JS/TS%20Converter)
+[Live Demo](https://json2js.vercel.app/) | [Report Bug](mailto:rizwanislam505@gmail.com?subject=[Bug%20Report]%20JSON%20to%20JS/TS%20Converter) | [Request Feature](mailto:rizwanislam505@gmail.com?subject=[Feature%20Request]%20JSON%20to%20JS/TS%20Converter)
+
+</div>
+
 ---
 
 ## Overview
